@@ -30,7 +30,7 @@ class ArticleCommand extends Command
             'test' => true,
         ]);
 
-        $result = $client->getArticle([
+        $result = $client->article([
             'uuid' => $input->getArgument('uuid'),
         ]);
         dump($result);

@@ -29,7 +29,7 @@ class ArticlesCommand extends Command
             'test' => true,
         ]);
 
-        $result = $client->getArticles([
+        $result = $client->articles([
             'language' => null,
             'tag' => null,
             'from' => '2019-01-31 15:31:16',

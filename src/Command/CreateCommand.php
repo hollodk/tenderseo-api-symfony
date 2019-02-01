@@ -40,7 +40,7 @@ class CreateCommand extends Command
         dump($result);
 
         if (isset($result->uuid)) {
-            $result = $client->getOrder([
+            $result = $client->order([
                 'uuid' => $result->uuid
             ]);
             dump($result);
