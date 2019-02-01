@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use TenderSEO\Client;
 
 class CreateCommand extends Command
 {
@@ -24,7 +25,7 @@ class CreateCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $client = new \App\Client([
+        $client = new Client([
             'key' => $input->getArgument('key'),
             'test' => true,
         ]);

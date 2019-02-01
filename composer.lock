@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6c634071ec7ff31da9b3ebaf01f8145",
+    "content-hash": "bdeb3be79f1358a1df13a65e44a3774f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1533,6 +1533,41 @@
                 "sql"
             ],
             "time": "2014-01-12T16:20:24+00:00"
+        },
+        {
+            "name": "mh/tenderseo-api",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hollodk/tenderseo-api.git",
+                "reference": "a7e08727dd6761dc5d5620818490d67ae25053e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hollodk/tenderseo-api/zipball/a7e08727dd6761dc5d5620818490d67ae25053e1",
+                "reference": "a7e08727dd6761dc5d5620818490d67ae25053e1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "guzzlehttp/guzzle": "^6.3",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TenderSEO\\": "TenderSEO/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Michael Holm",
+                    "email": "hollo@hollo.dk"
+                }
+            ],
+            "description": "TenderSEO api class",
+            "time": "2019-02-01T12:54:41+00:00"
         },
         {
             "name": "monolog/monolog",
