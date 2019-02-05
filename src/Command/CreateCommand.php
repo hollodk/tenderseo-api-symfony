@@ -19,7 +19,7 @@ class CreateCommand extends Command
         $this
             ->setDescription('Create a new article at tenderseo')
             ->addArgument('key', InputArgument::OPTIONAL, 'Api key')
-            ->addOption('option1', null, InputOption::VALUE_NONE, 'Option description')
+            ->addArgument('type', InputArgument::OPTIONAL, 'Article or translation')
         ;
     }
 
@@ -30,13 +30,31 @@ class CreateCommand extends Command
             'test' => true,
         ]);
 
-        $result = $client->createArticle([
-            'language' => 'english',
-            'keywords' => 'car, blue',
-            'words' => 50,
-            'tag' => 'test',
-            'test' => true, // order will not be processed
-        ]);
+        if ($input->getArgument('type') == 'translation') {
+            dump('create translation');
+
+            $result = $client->createArticle([
+                'source_language' => 'english',
+                'language' => 'danish',
+                'service' => 'translation',
+                'tag' => 'test',
+                'article' => 'Hi, how are you today?',
+                'test' => true, // order will not be processed
+            ]);
+
+        } else {
+            dump('create article');
+
+            $result = $client->createArticle([
+                'language' => 'english',
+                'keywords' => 'car, blue',
+                'service' => 'article',
+                'words' => 50,
+                'tag' => 'test',
+                'test' => true, // order will not be processed
+            ]);
+        }
+
         dump($result);
 
         if (isset($result->uuid)) {
